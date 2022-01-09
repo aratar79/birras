@@ -1,7 +1,5 @@
 import configparser
 import requests
-import time
-import random
 
 
 class ApiService:
@@ -42,7 +40,3 @@ class ApiService:
 
     def build_payload(self, variables=[]):
         pass
-
-    def fake_data(self):
-        result = random.randint(-10, 50)
-        return result

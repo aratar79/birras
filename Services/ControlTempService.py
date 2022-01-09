@@ -3,11 +3,12 @@ import configparser
 
 class ControlTempService:
 
-    def __init__(self, temp):
+    def __init__(self):
         self.config = configparser.ConfigParser()
         self.config.read('config.ini')
-        self.stable_temp = self.config.get('BEERSETTINGS','STABLE_TEMP')
+        self.stable_temp = float(self.config.get('BEERSETTINGS', 'STABLE_TEMP'))
 
+    def run(self, temp):
         if(temp > self.stable_temp):
             self.cool()
             self.start_fan()
