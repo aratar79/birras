@@ -1,5 +1,5 @@
 import configparser
-
+#import RP1.GPIO as gp
 
 class ControlTempService:
 
@@ -7,6 +7,9 @@ class ControlTempService:
         self.config = configparser.ConfigParser()
         self.config.read('config.ini')
         self.stable_temp = float(self.config.get('BEERSETTINGS', 'STABLE_TEMP'))
+        #gp.setmode(gp.BOARD)
+        #gp.setup(12,gp.OUT)
+        #gp.setup(32,gp.OUT)
 
     def run(self, temp):
         if(temp > self.stable_temp):
