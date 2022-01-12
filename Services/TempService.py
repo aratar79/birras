@@ -9,12 +9,12 @@
 from w1thermsensor import W1ThermSensor
 class TempService:
 
-    #def __init__(self):
-        #self.fakedata = FakeDataService()
+    # def __init__(self):
+    #    self.config()
 
-    def config(self):
-        pin = 4
-       # pass
+    # def config(self):
+    #     pin = 4
+    #    # pass
 
     def get_data(self):
         sensor = W1ThermSensor(Sensor.DS18B20, "00000588806a")
