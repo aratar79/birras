@@ -23,7 +23,7 @@ def main():
         beerTemparture = tempService.get_data()
         controlTemp.run(float(beerTemparture))
         servicesData = [beerTemparture, gasService.get_data_co2(),
-                        gasService.get_data_tvoc(), gasService.get_data_humidity()]
+                        gasService.get_data_tvoc()]
         for k, v in config.items('BEERVALUES'):
             payload[v] = servicesData[counter]
             print(counter)

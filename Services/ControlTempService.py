@@ -17,22 +17,26 @@ class ControlTempService:
             self.start_fan()
         elif(temp < self.stable_temp):
             self.heat()
-            self.stop_fan()
+            self.start_fan()
         else:
             self.off()
             self.stop_fan()
 
     def cool(self):
-        pass
-
+        GPIO.setup(18,GPIO.OUT)
+        GPIO.setup(23,GPIO.IN)
     def heat(self):
-        pass
+        GPIO.setup(18,GPIO.IN)
+        GPIO.setup(23,GPIO.OUT)
 
     def off(self):
-        pass
+        GPIO.setup(18,GPIO.OUT)
+        GPIO.setup(23,GPIO.OUT)
 
     def start_fan(self):
-        pass
+        GPIO.setup(24,GPIO.IN)
+        GPIO.setup(25,GPIO.IN)
 
     def stop_fan(self):
-        pass
+        GPIO.setup(24,GPIO.OUT)
+        GPIO.setup(25,GPIO.OUT)
